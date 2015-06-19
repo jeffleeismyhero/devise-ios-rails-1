@@ -43,7 +43,7 @@ module DeviseIosRails
           end
         end
 
-        SimpleTokenAuthentication::FallbackAuthenticationHandler.class_eval do
+        SimpleTokenAuthentication::DeviseFallbackHandler.class_eval do
           def authenticate_entity!(controller, entity)
             controller.send("authenticate_#{entity.name_underscore}!".to_sym, force: true)
           end
